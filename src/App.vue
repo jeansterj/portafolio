@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <LandingPorta></LandingPorta>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LandingPorta from './components/LandingPorta.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LandingPorta
   }
 }
 </script>
@@ -21,6 +21,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body{
+  background-color: #25292B;
+
 }
 </style>
