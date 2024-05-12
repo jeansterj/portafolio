@@ -38,6 +38,10 @@
 </nav>
 
 
+<AboutMe></AboutMe>
+<ProyectLanding></ProyectLanding>
+<SkillsPorta></SkillsPorta>
+<ContacMe></ContacMe>
 
 
 
@@ -45,6 +49,21 @@
 
 </template>
 <script>
+import SkillsPorta from "./SkillsPorta.vue"
+import ProyectLanding from "./ProyectLanding.vue"
+import AboutMe from "./AboutMe.vue"
+import ContacMe from "./ContacMe.vue"
 
 
+
+export default {
+  components: {
+
+    SkillsPorta,
+    ProyectLanding,
+    AboutMe,
+    ContacMe
+
+  }
+}
 </script>
