@@ -67,3 +67,14 @@ export default {
   }
 }
 </script>
+<style>
+
+.colorSecond{
+  background-color: #D97B29
+}
+
+.colorAccion{
+  background-color: #D4AF37
+}
+
+</style>

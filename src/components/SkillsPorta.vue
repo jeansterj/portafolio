@@ -1,4 +1,5 @@
 <template>
+<div class="d-none">
 
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
@@ -25,6 +26,8 @@
     <div>
         <p>Herramientas que han permitdo mejoras en el desarrollo.</p>
     </div>
+    
+</div>
         
     
 </template>
