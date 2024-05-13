@@ -1,5 +1,5 @@
 <template>
-<div class="bodyLanding">
+<div class="d-none bodyLanding">
 <nav class="navbar navbar-expand-lg bg-body-tertiary nabvarStyle">
   <div class="container-fluid justify-content-around">
     <a class="navbar-brand" href="#"><img src="../assets/jeanPaulLogo.svg" alt="<Jean Paul>"></a>
@@ -30,16 +30,13 @@
 <div class="container-fluid">
   <div class="row justify-content-center align-items-center" style="height: 100vh;">
     <div class="col-md-1 text-center">
-      <!-- Contenido a centrar -->
       <div class="d-grid gap-3">
-        <!-- Imágenes a la izquierda -->
         <img class="p-5" src="../assets/github.svg" alt="GitHub-logo">
         <img class="p-5" src="../assets/twitter.svg" alt="twitter-logo">
         <img class="p-5" src="../assets/linkedin-logo.svg" alt="linkedin-logo">
       </div>
     </div>
     <div class="col-md-11 text-center">
-      <!-- Título y logo en el centro -->
       <div class="d-grid">
         <h1 class="text-white">DESARROLLADOR WEB</h1>
         <img class="imgPortada" src="../assets/logoLanding.svg" alt="logoLanding">

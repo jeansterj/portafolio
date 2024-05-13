@@ -20,17 +20,21 @@
     </div>
 
     <div v-else-if="habilidades" class="container text-white">
+
         <p class="my-5">Habilidades con las que he desarrollado mis diferentes proyectos.</p>
+
+        <img v-for="skillH in skillHabilidades" :key="skillH.id" :src="require(`../assets/${skillH.name}.svg`)" :alt="skillH.name">
 
     </div>
 
     <div v-else-if="herramientas" class="container text-white">
         <p class="my-5">Herramientas que han permitdo mejoras en el desarrollo.</p>
+        <img v-for="skillHe in skillHerramientas" :key="skillHe.id" :src="require(`../assets/${skillHe.name}.svg`)" :alt="skillHe.name">
+
     </div>
     
 </div>
         
-    
 </template>
 <script>
 export default {
@@ -48,20 +52,24 @@ export default {
             habilidades: false,
             herramientas: false,
             skillHabilidades: [
-            {id: 1, name: 'vue-logo', src:''},
-            {id: 2, name: 'html-logo', src:''},
-            {id: 3, name: 'css-logo', src:''},
-            {id: 4, name: 'js-logo', src:''},
-            {id: 5, name: 'java-logo', src:''},
-            {id: 6, name: 'laravel-logo', src:''},
-            {id: 6, name: 'bootstrap-logo', src:''},
+            {id: 1, name: 'vue-logo', src:"../assets/vue-logo.svg"},
+            {id: 2, name: 'HTML5_logo', src:'../assets/HTML5_logo.svg'},
+            {id: 3, name: 'CSS3_logo', src:'../assets/CSS3_logo.svg'},
+            {id: 4, name: 'Javascript', src:'../assets/Javascript.svg'},
+            {id: 5, name: 'java-logo', src:'../assets/java-logo.svg'},
+            {id: 6, name: 'laravel-logo', src:'../assets/laravel-logo.svg'},
+            {id: 7, name: 'Bootstrap_logo', src:'../assets/Bootstrap_logo.svg'},
 
             ],
             skillHerramientas: [
-            {id: 1, name: 'figma-logo', src:''},
-            {id: 2, name: 'clickUp-logo', src:''},
-            {id: 3, name: 'jira-logo', src:''},
-            {id: 4, name: 'visual-Estudio-Code-logo', src:''},
+            {id: 1, name: 'figma-logo', src:'../assets/figma-logo.svg'},
+            {id: 2, name: 'clickUp-logo', src:'../assets/clickUp-logo.svg'},
+            {id: 3, name: 'Jira_Logo', src:'../assets/Jira_Logo.svg'},
+            {id: 4, name: 'Visual_Studio_Code', src:'../assets/Visual_Studio_Code.svg'},
+            {id: 5, name: 'github', src:'../assets/github.svg'},
+            {id: 6, name: 'git', src:'../assets/git.svg'}
+
+
             
             ]
         }
