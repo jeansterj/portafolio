@@ -19,18 +19,34 @@
     </div>
     </div>
 
-    <div v-else-if="habilidades" class="container text-white">
-
-        <p class="my-5">Habilidades con las que he desarrollado mis diferentes proyectos.</p>
-
-        <img v-for="skillH in skillHabilidades" :key="skillH.id" :src="require(`../assets/${skillH.name}.svg`)" :alt="skillH.name">
-
+    <div v-else-if="habilidades" class="container skills" :class="{ 'active': habilidades }">
+      <div class="skills-content">
+        <p class="my-5 text-white">Habilidades con las que he desarrollado mis diferentes proyectos.</p>
+    
+        <div class="skill-list">
+          <div v-for="skillH in skillHabilidades" :key="skillH.id" class="skill-card mx-4">
+            <div class="tooltip">{{ skillH.name }}</div>
+            <div class="card-icon">
+              <img :src="require(`../assets/${skillH.name}.svg`)" :alt="skillH.name">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div v-else-if="herramientas" class="container text-white">
-        <p class="my-5">Herramientas que han permitdo mejoras en el desarrollo.</p>
-        <img v-for="skillHe in skillHerramientas" :key="skillHe.id" :src="require(`../assets/${skillHe.name}.svg`)" :alt="skillHe.name">
-
+    <div v-else-if="herramientas" class="container skills" :class="{ 'active': herramientas }">
+      <div class="skills-content">
+        <p class="my-5 text-white">Herramientas que han permitido mejoras en el desarrollo.</p>
+    
+        <div class="skill-list">
+          <div v-for="skillHe in skillHerramientas" :key="skillHe.id" class="skill-card mx-4">
+            <div class="tooltip">{{ skillHe.name }}</div>
+            <div class="card-icon">
+              <img :src="require(`../assets/${skillHe.name}.svg`)" :alt="skillHe.name">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
 </div>
@@ -94,6 +110,76 @@ export default {
 }
 </script>
 <style>
+
+.skills-content {
+  margin-bottom: 50px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.skill-card {
+  position: relative;
+  background: #25292B;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */ 
+  cursor: help;
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  background: #D4AF37;
+  min-width: max-content;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */ 
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.skill-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.skills-box .skills-list,
+.skills-box.active .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+<!-- .btn-square {
+  width: 100px; /* Ancho del botón */
+  height: 100px; /* Altura del botón */
+  border-radius: 20px; /* Sin bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */ 
+} -->
+
   .btn-outline {
     color: white;
     border-color: white;
