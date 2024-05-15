@@ -1,5 +1,5 @@
 <template>
-    <div class="d-none">
+    <div class="">
         <div>
         <h1>¿Algun proyecto en mente?</h1>
         <h1>Contacta y lo hacemos realidad</h1>

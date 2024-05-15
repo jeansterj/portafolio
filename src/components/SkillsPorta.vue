@@ -26,7 +26,7 @@
           <div v-for="skillH in skillHabilidades" :key="skillH.id" class="skill-card mx-4">
             <div class="tooltip">{{ skillH.name.replace('-', ' ') }}</div>
             <div class="card-icon">
-              <img :src="require(`../assets/${skillH.name}.svg`)" :alt="skillH.name">
+              <img :src="require(`../assets/${skillH.name}.svg`)" :alt="skillH.name" >
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
           <div v-for="skillHe in skillHerramientas" :key="skillHe.id" class="skill-card mx-4">
             <div class="tooltip">{{ skillHe.name.replace('-', ' ') }}</div>
             <div class="card-icon">
-              <img :src="require(`../assets/${skillHe.name}.svg`)" :alt="skillHe.name">
+              <img :src="require(`../assets/${skillHe.name}.svg`)" :alt="skillHe.name" :class="{ 'github-icon': skillHe.name === 'github' }">
             </div>
           </div>
         </div>
@@ -125,8 +125,8 @@ export default {
 .skill-card {
   position: relative;
   background: #25292B;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: grid;
   place-items: center;
   border-radius: 20px;
@@ -221,5 +221,10 @@ export default {
     gap: 20px; 
   }
 
+
+  .github-icon {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: 100px; 
+}
 
 </style>
