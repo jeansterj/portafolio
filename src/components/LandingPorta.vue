@@ -1,5 +1,5 @@
 <template>
-<div class=" bodyLanding">
+<div class="d-none bodyLanding">
 <nav class="navbar navbar-expand-lg bg-body-tertiary nabvarStyle">
   <div class="container-fluid justify-content-around">
     <a class="navbar-brand" href="#"><img src="../assets/jeanPaulLogo.svg" alt="<Jean Paul>"></a>
@@ -88,6 +88,8 @@ export default {
 }
 </script>
 <style>
+
+
 
 .colorPrimary{
   background-color: #35A2BD

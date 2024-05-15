@@ -1,7 +1,7 @@
 <template>
 
 
- <div class=" d-flex justify-content-around container ">
+ <div class="d-none d-flex justify-content-around container ">
     <div>
         <img src="../assets/jeanPrueba.svg" alt="jeanPhoto">
     </div>
