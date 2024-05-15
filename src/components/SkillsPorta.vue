@@ -22,10 +22,9 @@
     <div v-else-if="habilidades" class="container skills" :class="{ 'active': habilidades }">
       <div class="skills-content">
         <p class="my-5 text-white">Habilidades con las que he desarrollado mis diferentes proyectos.</p>
-    
         <div class="skill-list">
           <div v-for="skillH in skillHabilidades" :key="skillH.id" class="skill-card mx-4">
-            <div class="tooltip">{{ skillH.name }}</div>
+            <div class="tooltip">{{ skillH.name.replace('-', ' ') }}</div>
             <div class="card-icon">
               <img :src="require(`../assets/${skillH.name}.svg`)" :alt="skillH.name">
             </div>
@@ -40,7 +39,7 @@
     
         <div class="skill-list">
           <div v-for="skillHe in skillHerramientas" :key="skillHe.id" class="skill-card mx-4">
-            <div class="tooltip">{{ skillHe.name }}</div>
+            <div class="tooltip">{{ skillHe.name.replace('-', ' ') }}</div>
             <div class="card-icon">
               <img :src="require(`../assets/${skillHe.name}.svg`)" :alt="skillHe.name">
             </div>
@@ -68,22 +67,22 @@ export default {
             habilidades: false,
             herramientas: false,
             skillHabilidades: [
-            {id: 1, name: 'vue-logo', src:"../assets/vue-logo.svg"},
-            {id: 2, name: 'HTML5_logo', src:'../assets/HTML5_logo.svg'},
-            {id: 3, name: 'CSS3_logo', src:'../assets/CSS3_logo.svg'},
+            {id: 1, name: 'Vue-logo', src:"../assets/vue-logo.svg"},
+            {id: 2, name: 'HTML-logo', src:'../assets/HTML-logo.svg'},
+            {id: 3, name: 'CSS-logo', src:'../assets/CSS-logo.svg'},
             {id: 4, name: 'Javascript', src:'../assets/Javascript.svg'},
-            {id: 5, name: 'java-logo', src:'../assets/java-logo.svg'},
-            {id: 6, name: 'laravel-logo', src:'../assets/laravel-logo.svg'},
-            {id: 7, name: 'Bootstrap_logo', src:'../assets/Bootstrap_logo.svg'},
+            {id: 5, name: 'Java-logo', src:'../assets/Java-logo.svg'},
+            {id: 6, name: 'Laravel-logo', src:'../assets/Laravel-logo.svg'},
+            {id: 7, name: 'Bootstrap-logo', src:'../assets/Bootstrap-logo.svg'},
 
             ],
             skillHerramientas: [
-            {id: 1, name: 'figma-logo', src:'../assets/figma-logo.svg'},
-            {id: 2, name: 'clickUp-logo', src:'../assets/clickUp-logo.svg'},
-            {id: 3, name: 'Jira_Logo', src:'../assets/Jira_Logo.svg'},
-            {id: 4, name: 'Visual_Studio_Code', src:'../assets/Visual_Studio_Code.svg'},
+            {id: 1, name: 'Figma-logo', src:'../assets/Figma-logo.svg'},
+            {id: 2, name: 'ClickUp-logo', src:'../assets/ClickUp-logo.svg'},
+            {id: 3, name: 'Jira-Logo', src:'../assets/Jira-Logo.svg'},
+            {id: 4, name: 'Visual-Studio-Code', src:'../assets/Visual-Studio-Code.svg'},
             {id: 5, name: 'github', src:'../assets/github.svg'},
-            {id: 6, name: 'git', src:'../assets/git.svg'}
+            {id: 6, name: 'Git', src:'../assets/Git.svg'}
 
 
             
