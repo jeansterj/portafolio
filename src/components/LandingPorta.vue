@@ -1,5 +1,5 @@
 <template>
-<div class="d-none bodyLanding">
+<div class=" bodyLanding">
 <nav class="navbar navbar-expand-lg bg-body-tertiary nabvarStyle">
   <div class="container-fluid justify-content-around">
     <a class="navbar-brand" href="#"><img src="../assets/jeanPaulLogo.svg" alt="<Jean Paul>"></a>

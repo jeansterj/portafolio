@@ -1,4 +1,4 @@
-<template>
+<template >
   <div class=" d-flex justify-content-around my-5 container">
     <div class="text-start me-3">
       <div class="text-white">

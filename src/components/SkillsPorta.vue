@@ -1,5 +1,5 @@
 <template>
-<div class="d-none container-fluid my-5">
+<div class=" container-fluid my-5">
 
     <div class="btn-group text-white" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="personal" @click="prueba('personal')">
@@ -19,11 +19,11 @@
     </div>
     </div>
 
-    <div v-else-if="habilidades" class="container skills" :class="{ 'active': habilidades }">
-      <div class="skills-content">
+    <div v-else-if="habilidades" class="container skills " :class="{ 'active': habilidades }">
+      <div class="skills-content ">
         <p class="my-5 text-white">Habilidades con las que he desarrollado mis diferentes proyectos.</p>
-        <div class="skill-list">
-          <div v-for="skillH in skillHabilidades" :key="skillH.id" class="skill-card mx-4">
+        <div class="skill-list ">
+          <div v-for="skillH in skillHabilidades" :key="skillH.id" class="skill-card mx-4 ">
             <div class="tooltip">{{ skillH.name.replace('-', ' ') }}</div>
             <div class="card-icon">
               <img :src="require(`../assets/${skillH.name}.svg`)" :alt="skillH.name" >
@@ -33,12 +33,12 @@
       </div>
     </div>
 
-    <div v-else-if="herramientas" class="container skills" :class="{ 'active': herramientas }">
-      <div class="skills-content">
+    <div v-else-if="herramientas" class="container skills " :class="{ 'active': herramientas }">
+      <div class="skills-content ">
         <p class="my-5 text-white">Herramientas que han permitido mejoras en el desarrollo.</p>
     
-        <div class="skill-list">
-          <div v-for="skillHe in skillHerramientas" :key="skillHe.id" class="skill-card mx-4">
+        <div class="skill-list ">
+          <div v-for="skillHe in skillHerramientas" :key="skillHe.id" class="skill-card mx-4 ">
             <div class="tooltip">{{ skillHe.name.replace('-', ' ') }}</div>
             <div class="card-icon">
               <img :src="require(`../assets/${skillHe.name}.svg`)" :alt="skillHe.name" :class="{ 'github-icon': skillHe.name === 'github' }">
@@ -74,6 +74,8 @@ export default {
             {id: 5, name: 'Java-logo', src:'../assets/Java-logo.svg'},
             {id: 6, name: 'Laravel-logo', src:'../assets/Laravel-logo.svg'},
             {id: 7, name: 'Bootstrap-logo', src:'../assets/Bootstrap-logo.svg'},
+            {id: 8, name: 'Mysql-logo', src:'../assets/Mysql-logo.svg'}
+
 
             ],
             skillHerramientas: [
@@ -130,7 +132,7 @@ export default {
   display: grid;
   place-items: center;
   border-radius: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */ 
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   cursor: help;
 }
 
