@@ -20,7 +20,7 @@
                         tendencias del desarrollo frontend y ofrecer resultados de calidad.</p>
         
                     <div class="my-4 text-center">
-                        <button class="btn colorSecond text-white mx-2">CONTACTAME</button>
+                        <button class="btn colorSecond mx-2"><a href="#contacto" class="text-white">CONTACTAME</a></button>
                         <button class="btn colorAccion mx-2">DESCARGAR CURRICULUM</button>
                     </div>
         
@@ -44,5 +44,9 @@
 <style>
 .btn:hover {
     background-color: none
+}
+
+a.text-white{
+    text-decoration: none
 }
 </style>
