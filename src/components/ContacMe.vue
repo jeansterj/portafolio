@@ -1,5 +1,5 @@
 <template >
-  <div class=" d-flex justify-content-around my-5 container">
+  <div class=" d-flex justify-content-around my-5 container pt-5 pb-4" id="contacto">
     <div class="text-start me-3">
       <div class="text-white">
         <div class="my-3 me-3">
