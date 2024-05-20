@@ -1,31 +1,33 @@
 <template>
   <div class="bodyLanding" id="home">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary nabvarStyle fixed-top" id="navbar">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nabvarStyle fixed-top" :class="{ 'fixed-navbar': isNavbarFixed }" id="navbar">
       <div class="container-fluid justify-content-around">
         <a class="navbar-brand" href="#"><img src="../assets/jeanPaulLogo.svg" alt="Jean Paul"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between merriweather navigation" id="navbarNav">
-          <a class="nav-link active mx-4" aria-current="page" href="#home">{{ $t('HOME') }}</a>
-          <a class="nav-link active mx-4" href="#conoceme">{{ $t('CONOCEME') }}</a>
-          <a class="nav-link active mx-4" href="#habilidades">{{ $t('HABILIDADES') }}</a>
-          <a class="nav-link active mx-4" href="#proyectos">{{ $t('PROYECTOS') }}</a>
-          <a class="nav-link active mx-4" href="#contacto">{{ $t('CONTACTO') }}</a>
+          <a class="nav-link mx-4" aria-current="page" href="#home">{{ $t('HOME') }}</a>
+          <a class="nav-link mx-4" href="#conoceme">{{ $t('CONOCEME') }}</a>
+          <a class="nav-link mx-4" href="#proyectos">{{ $t('PROYECTOS') }}</a>
+          <a class="nav-link mx-4" href="#habilidades">{{ $t('HABILIDADES') }}</a>
+          <a class="nav-link mx-4" href="#contacto">{{ $t('CONTACTO') }}</a>
           <div class="d-flex">
-            <a class="nav-link active" href="#" @click.prevent="changeLanguage('es')">ES/</a>
-            <a class="nav-link active" href="#" @click.prevent="changeLanguage('cat')">CAT/</a>
-            <a class="nav-link active" href="#" @click.prevent="changeLanguage('en')">EN</a>
+            <a class="nav-link" href="#" @click.prevent="changeLanguage('es')">ES/</a>
+            <a class="nav-link" href="#" @click.prevent="changeLanguage('cat')">CAT/</a>
+            <a class="nav-link" href="#" @click.prevent="changeLanguage('en')">EN</a>
           </div>
         </div>
       </div>
     </nav>
 
+    <!-- Main Content -->
     <div class="container-fluid mt-5 pt-1">
       <div class="row justify-content-center align-items-center" style="height: 100vh;">
         <div class="col-md-1 text-center">
           <div class="d-grid gap-3">
-           <a href="https://github.com/jeansterj"> <img class="p-5" src="../assets/github.svg" alt="GitHub-logo"></a>
+            <a href="https://github.com/jeansterj"><img class="p-5" src="../assets/github.svg" alt="GitHub-logo"></a>
             <a href="https://x.com/jeansterj"><img class="p-5" src="../assets/twitter.svg" alt="twitter-logo"></a>
             <a href="https://www.linkedin.com/in/jean-paul-da-silva-410896198/"><img class="p-5" src="../assets/linkedin-logo.svg" alt="linkedin-logo"></a>
           </div>
@@ -37,21 +39,23 @@
           </div>
         </div>
         <a href="#conoceme">
-        <div class="arrow-scroll">
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-          <div class="arrow"></div>
-        </div>
-      </a>
+          <div class="arrow-scroll">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+          </div>
+        </a>
       </div>
     </div>
 
-    <AboutMe></AboutMe>
-    <ProyectLanding></ProyectLanding>
-    <SkillsPorta></SkillsPorta>
-    <ContacMe></ContacMe>
+    <!-- Sections -->
+    <AboutMe id="conoceme"></AboutMe>
+    <ProyectLanding id="proyectos"></ProyectLanding>
+    <SkillsPorta id="habilidades"></SkillsPorta>
+    <ContacMe id="contacto"></ContacMe>
   </div>
 </template>
+
 
 <script>
 import SkillsPorta from "./SkillsPorta.vue";
@@ -66,16 +70,58 @@ export default {
     AboutMe,
     ContacMe,
   },
-  methods: {
-    changeLanguage(language) {
-      this.$i18n.locale = language;
-      console.log('paseeee')
-    },
-  }
+  data() {
+    return {
+      isNavbarFixed: false,
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },methods: {
+  changeLanguage(language) {
+    this.$i18n.locale = language;
+  },
+  handleScroll() {
+    const sections = [
+      { id: 'home', top: document.getElementById('home').offsetTop - 50 },
+      { id: 'conoceme', top: document.getElementById('conoceme').offsetTop - 50 },
+      { id: 'proyectos', top: document.getElementById('proyectos').offsetTop - 50 },
+      { id: 'habilidades', top: document.getElementById('habilidades').offsetTop - 50 },
+      { id: 'contacto', top: document.getElementById('contacto').offsetTop - 100 },
+    ];
+    
+    const scrollPosition = window.scrollY;
+
+    // Update navbar fixed state
+    this.isNavbarFixed = scrollPosition >= sections[1].top;
+
+    // Reset all links to inactive
+    const navLinks = document.querySelectorAll('.navigation a');
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Highlight the current section link
+    for (let i = sections.length - 1; i >= 0; i--) {
+      if (scrollPosition >= sections[i].top) {
+        document.querySelector(`a[href="#${sections[i].id}"]`).classList.add('active');
+        break;
+      }
+    }
+  },
+},
 };
 </script>
 
 <style>
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
 
 html {
   scroll-behavior: smooth;
@@ -86,10 +132,9 @@ html {
   font-size: 1.1em;
   text-decoration: none;
   font-weight: 500;
-  
 }
 
-.navigation a::after{
+.navigation a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -100,11 +145,11 @@ html {
   border-radius: 5px;
   transform: scaleX(0);
   transition: transform .5s;
-  
 }
 
-.navigation a:hover::after{
-  transform: scaleX(1)
+.navigation a.active::after,
+.navigation a:hover::after {
+  transform: scaleX(1);
 }
 
 .colorPrimary {

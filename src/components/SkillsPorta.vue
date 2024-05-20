@@ -1,5 +1,5 @@
 <template>
-  <div class="my-5 pt-5" id="habilidades">
+  <div class="my-5 pt-5" >
     <div class="container-fluid my-5 pt-5">
       <div class="btn-group text-white" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="personal" @click="prueba('personal')">
