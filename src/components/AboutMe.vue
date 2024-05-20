@@ -3,7 +3,7 @@
       <div class="my-5 pt-4 pb-5">
         <div class="d-flex flex-column flex-md-row justify-content-around align-items-center container pt-5 pb-5">
           <div class="mb-3 mb-md-0">
-            <img src="@/assets/jeanPrueba.svg" alt="jeanPhoto" class="img-fluid">
+            <img src="@/assets/jean-brazo.svg" alt="jeanPhoto" class="img-fluid">
           </div>
   
           <div class="text-white text-center text-md-start">
