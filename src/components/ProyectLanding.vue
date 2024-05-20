@@ -1,10 +1,10 @@
 <template>
-  <div class="container text-white my-5 pt-3" id="proyectos">
+  <div class="container text-white my-5 pt-4" id="proyectos">
 
     <div class="d-flex justify-content-around container my-5">
 
       <div class="text-center">
-        <h1>OBSERVA MIS TRABAJOS REALIZADOS</h1>
+        <h1 class="merriweather">OBSERVA MIS TRABAJOS REALIZADOS</h1>
         <p>Me dedico a crear sitios web de alta calidad, diseñado a perdurar. Todo con un enfoque de interfaces claras,
           simples y elegantes, facilitando la comprensión y uso para cualquier cliente.</p>
       </div>

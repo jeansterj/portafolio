@@ -6,7 +6,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-between merriweather" id="navbarNav">
           <a class="nav-link active mx-4" aria-current="page" href="#home">HOME</a>
           <a class="nav-link active mx-4" href="#conoceme">CONOCEME</a>
           <a class="nav-link active mx-4" href="#habilidades">HABILIDADES</a>
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-11 text-center">
           <div class="d-grid">
-            <h1 class="text-white">DESARROLLADOR WEB</h1>
+            <h1 class="text-white merriweather">DESARROLLADOR WEB</h1>
             <img class="imgPortada" src="../assets/logoLanding.svg" alt="logoLanding">
           </div>
         </div>
@@ -73,14 +73,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-    handleScroll() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    },
+   
   },
 };
 </script>
@@ -106,7 +99,7 @@ html {
 .nabvarStyle {
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  background-color: #25292B !important;
+  background-color: #35A2BD !important;
   color: white;
   transition: background-color 0.3s ease;
 }
@@ -162,8 +155,7 @@ html {
   left: none;
 }
 
-.scrolled {
-  background-color: #35A2BD !important;
-  color: white !important;
+.merriweather {
+  font-family: 'Merriweather', serif;
 }
 </style>
