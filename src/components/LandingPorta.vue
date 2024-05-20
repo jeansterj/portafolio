@@ -25,6 +25,7 @@
       <div class="row justify-content-center align-items-center" style="height: 100vh;">
         <div class="col-md-1 text-center">
           <div class="d-grid gap-3">
+            <h1>ello</h1>
             <img class="p-5" src="../assets/github.svg" alt="GitHub-logo">
             <img class="p-5" src="../assets/twitter.svg" alt="twitter-logo">
             <img class="p-5" src="../assets/linkedin-logo.svg" alt="linkedin-logo">
