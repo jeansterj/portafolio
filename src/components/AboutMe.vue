@@ -7,18 +7,15 @@
                 </div>
         
                 <div class="text-white text-center text-md-start">
-                    <p class="my-3">¡Hola! Soy Jean Paul, un desarrollador web, con un sólido compromiso de mejorar
-                        constantemente mis habilidades en este ámbito.</p>
-                    <p class="my-3">Mi pasión radica en crear interfaces de usuario atractivas y funcionales que mejoren la
-                        experiencia del usuario.</p>
-                    <p class="my-3">Estoy dedicado a explorar nuevas tecnologías y metodologías para mantenerme al día con las
-                        tendencias del desarrollo frontend y ofrecer resultados de calidad.</p>
+                    <p class="my-3">{{ $t('CONTACTO-PARRAFO1') }}</p>
+                    <p class="my-3">{{ $t('CONTACTO-PARRAFO2') }}</p>
+                    <p class="my-3">{{ $t('CONTACTO-PARRAFO3') }}</p>
         
                     <div class="my-4 text-center">
                         <button class="btn colorSecond mx-2">
-                            <a href="#contacto" class="text-white nunito">CONTACTAME</a>
+                            <a href="#contacto" class="text-white nunito">{{$t('CONTACTO') }}</a>
                         </button>
-                        <button class="btn colorAccion mx-2 nunito">DESCARGAR CURRICULUM</button>
+                        <button class="btn colorAccion mx-2 nunito">{{ $t('DESCARGAR') }}</button>
                     </div>
                 </div>
             </div>

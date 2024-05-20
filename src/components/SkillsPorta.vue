@@ -3,25 +3,25 @@
     <div class="container-fluid my-5 pt-5">
       <div class="btn-group text-white" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="personal" @click="prueba('personal')">
-        <label class="btn btn-outline" for="btnradio1">PERSONALES</label>
+        <label class="btn btn-outline" for="btnradio1">{{$t('PERSONALES') }}</label>
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" :checked="habilidades" @click="prueba('habilidades')">
-        <label class="btn btn-outline" for="btnradio2">HABILIDADES</label>
+        <label class="btn btn-outline" for="btnradio2">{{$t('HABILIDADES') }} </label>
 
         <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" :checked="herramientas" @click="prueba('herramientas')">
-        <label class="btn btn-outline" for="btnradio3">HERRAMIENTAS</label>
+        <label class="btn btn-outline" for="btnradio3">{{$t('HERRAMIENTAS') }} </label>
       </div>
 
       <div class="skills-content">
         <div v-if="personal" class="skills-box text-white">
-          <p class="my-5">Características personales que me crean como profesional.</p>
+          <p class="my-5">{{$t('caracteristica1') }} </p>
           <div class="button-container my-4">
             <button class="btn text-white colorPrimary" v-for="skill in skillPersonal" :key="skill.id">{{ skill.skill }}</button>
           </div>
         </div>
 
         <div v-else-if="habilidades" class="skills-box skills text-white">
-          <p class="my-5">Habilidades con las que he desarrollado mis diferentes proyectos.</p>
+          <p class="my-5">{{$t('caracteristica2') }} </p>
           <div class="skill-list">
             <div v-for="skillH in skillHabilidades" :key="skillH.id" class="skill-card mx-4">
               <div class="tooltip">{{ skillH.name.replace('-', ' ') }}</div>
@@ -33,7 +33,7 @@
         </div>
 
         <div v-else-if="herramientas" class="skills-box skills text-white">
-          <p class="my-5">Herramientas que han permitido mejoras en el desarrollo.</p>
+          <p class="my-5">{{$t('caracteristica3') }}</p>
           <div class="skill-list">
             <div v-for="skillHe in skillHerramientas" :key="skillHe.id" class="skill-card mx-4">
               <div class="tooltip">{{ skillHe.name.replace('-', ' ') }}</div>

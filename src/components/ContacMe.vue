@@ -3,22 +3,22 @@
     <div class="text-start me-3">
       <div class="text-white">
         <div class="my-3 me-3">
-          <h1>¿Algun proyecto en mente?</h1>
-          <h1>Contacta y lo hacemos realidad</h1>
+          <h1>{{$t('contacMe') }}</h1>
+          <h1> {{$t('contacMe1') }}</h1>
 
         </div>
         <div class="my-5 me-3">
-          <h3 class="my-3">Ponte en contacto y déjame saber cómo puedo ayudarte.</h3>
-          <h3>Rellena el formulario y me pondré en contacto lo antes posible.</h3>
+          <h3 class="my-3">{{$t('contacMe2') }} </h3>
+          <h3> {{$t('contacMe3') }}</h3>
         </div>
 
         <div class="my-5 me-3">
-          <h4><font-awesome-icon :icon="['fas', 'envelope']" /> Correo</h4>
+          <h4><font-awesome-icon :icon="['fas', 'envelope']" />{{$t('Correo') }}</h4>
           <p>jdasilvao2223@politecnics.barcelona</p>
         </div>
 
         <div class="my-5 me-3">
-          <h4><font-awesome-icon :icon="['fas', 'phone']" /> Telefono</h4>
+          <h4><font-awesome-icon :icon="['fas', 'phone']" />{{$t('Telefono') }} </h4>
           <p>+34-658109985</p>
         </div>
 
@@ -34,25 +34,25 @@
           <form>
 
             <div class="mb-4 text-start">
-              <label for="nombre" class="form-label ">Nombre</label>
+              <label for="nombre" class="form-label "> {{$t('Nombre') }}</label>
               <input type="text" class="form-control custom-input" id="nombre" placeholder="Juan Cabrera" required>
             </div>
             <div class="mb-4 text-start">
-              <label for="email" class="form-label">Correo</label>
+              <label for="email" class="form-label">{{$t('Correo') }} </label>
               <input type="email" class="form-control custom-input" id="email" placeholder="name@example.com"
                 aria-describedby="emailHelp" required>
             </div>
             <div class="mb-4 text-start">
-              <label for="phone" class="form-label">Telefono</label>
+              <label for="phone" class="form-label">{{$t('Telefono') }} </label>
               <input type="text" class="form-control custom-input" id="phone" placeholder="658XXXXXX" required>
             </div>
             <div class="mb-5 text-start">
-              <label for="mensaje" class="form-label">Mensaje</label>
+              <label for="mensaje" class="form-label">{{$t('Mensaje') }} </label>
               <textarea class="form-control custom-input" id="mensaje" rows="3" placeholder="Redacta el mensaje"
                 required></textarea>
             </div>
             <div class="d-grid gap-2 my-4">
-              <button type="submit" class="btn colorAccion text-center text-white">ENVIAR</button>
+              <button type="submit" class="btn colorAccion text-center text-white">{{$t('ENVIAR') }} </button>
             </div>
           </form>
 

@@ -4,9 +4,8 @@
     <div class="d-flex justify-content-around container my-5">
 
       <div class="text-center">
-        <h1 class="merriweather">OBSERVA MIS TRABAJOS REALIZADOS</h1>
-        <p>Me dedico a crear sitios web de alta calidad, diseñado a perdurar. Todo con un enfoque de interfaces claras,
-          simples y elegantes, facilitando la comprensión y uso para cualquier cliente.</p>
+        <h1 class="merriweather">{{$t('OBSERVA') }} </h1>
+        <p>{{$t('text-observa') }} </p>
       </div>
 
     </div>
