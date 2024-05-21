@@ -90,7 +90,7 @@ export default {
       { id: 'conoceme', top: document.getElementById('conoceme').offsetTop - 50 },
       { id: 'proyectos', top: document.getElementById('proyectos').offsetTop - 50 },
       { id: 'habilidades', top: document.getElementById('habilidades').offsetTop - 50 },
-      { id: 'contacto', top: document.getElementById('contacto').offsetTop - 100 },
+      { id: 'contacto', top: document.getElementById('contacto').offsetTop - 150 },
     ];
     
     const scrollPosition = window.scrollY;
