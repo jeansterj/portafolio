@@ -64,22 +64,22 @@ export default {
       habilidades: false,
       herramientas: false,
       skillHabilidades: [
-        { id: 1, name: 'Vue-logo', src: require('../assets/Vue-logo.svg') },
+        { id: 1, name: 'vue-logo', src: require('../assets/vue-logo.svg') },
         { id: 2, name: 'HTML-logo', src: require('../assets/HTML-logo.svg') },
         { id: 3, name: 'CSS-logo', src: require('../assets/CSS-logo.svg') },
         { id: 4, name: 'Javascript', src: require('../assets/Javascript.svg') },
-        { id: 5, name: 'Java-logo', src: require('../assets/Java-logo.svg') },
-        { id: 6, name: 'Laravel-logo', src: require('../assets/Laravel-logo.svg') },
+        { id: 5, name: 'java-logo', src: require('../assets/java-logo.svg') },
+        { id: 6, name: 'laravel-logo', src: require('../assets/laravel-logo.svg') },
         { id: 7, name: 'Bootstrap-logo', src: require('../assets/Bootstrap-logo.svg') },
         { id: 8, name: 'Mysql-logo', src: require('../assets/Mysql-logo.svg') }
       ],
       skillHerramientas: [
-        { id: 1, name: 'Figma-logo', src: require('../assets/Figma-logo.svg') },
-        { id: 2, name: 'ClickUp-logo', src: require('../assets/ClickUp-logo.svg') },
+        { id: 1, name: 'figma-logo', src: require('../assets/figma-logo.svg') },
+        { id: 2, name: 'clickUp-logo', src: require('../assets/clickUp-logo.svg') },
         { id: 3, name: 'Jira-Logo', src: require('../assets/Jira-Logo.svg') },
         { id: 4, name: 'Visual-Studio-Code', src: require('../assets/Visual-Studio-Code.svg') },
         { id: 5, name: 'github', src: require('../assets/github.svg') },
-        { id: 6, name: 'Git', src: require('../assets/Git.svg') }
+        { id: 6, name: 'git', src: require('../assets/git.svg') }
       ]
     };
   },
