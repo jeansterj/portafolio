@@ -92,6 +92,9 @@ export default {
 </script>
 
 <style>
+
+
+
 .form-control {
   background-color: #25292B
 }
@@ -108,6 +111,17 @@ box-shadow:
   15px 15px 10px rgba(37, 41, 43, 0.56),
   20px 20px 15px rgba(33, 37, 39, 0.56),
   25px 25px 20px rgba(30, 33, 35, 0.56);
+}
+
+.accessibility-mode .colorFormCard {
+  background: linear-gradient(135deg, #002b36, #3B4245) !important;  /* Degradado desde #002b36 a #3B4245 */
+  border-radius: 20px;  /* Bordes redondeados */
+  box-shadow: 
+    5px 5px 0px rgba(255, 255, 255, 0.56),
+    10px 10px 5px rgba(200, 200, 200, 0.56),
+    15px 15px 10px rgba(150, 150, 150, 0.56),
+    20px 20px 15px rgba(100, 100, 100, 0.56),
+    25px 25px 20px rgba(50, 50, 50, 0.56);
 }
 
 .cardPerso {

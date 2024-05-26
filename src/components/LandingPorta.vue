@@ -1,5 +1,5 @@
 <template>
-  <div class="bodyLanding" id="home">
+  <div class="bodyLanding" id="home" :class="{ 'accessibility-mode': isAccessibilityMode }">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary nabvarStyle fixed-top" :class="{ 'fixed-navbar': isNavbarFixed }" id="navbar">
       <div class="container-fluid justify-content-around">
@@ -21,6 +21,10 @@
         </div>
       </div>
     </nav>
+
+    <button @click="toggleAccessibilityMode" class="btn btn-accessibility">
+      <font-awesome-icon :icon="['fas', 'universal-access']" />
+    </button>
 
     <!-- Main Content -->
     <div class="container-fluid mt-5 pt-1">
@@ -56,7 +60,6 @@
   </div>
 </template>
 
-
 <script>
 import SkillsPorta from "./SkillsPorta.vue";
 import ProyectLanding from "./ProyectLanding.vue";
@@ -73,6 +76,7 @@ export default {
   data() {
     return {
       isNavbarFixed: false,
+      isAccessibilityMode: false,
     };
   },
   mounted() {
@@ -80,41 +84,93 @@ export default {
   },
   unmounted() {
     window.removeEventListener('scroll', this.handleScroll);
-  },methods: {
-  changeLanguage(language) {
-    this.$i18n.locale = language;
   },
-  handleScroll() {
-    const sections = [
-      { id: 'home', top: document.getElementById('home').offsetTop - 50 },
-      { id: 'conoceme', top: document.getElementById('conoceme').offsetTop - 50 },
-      { id: 'proyectos', top: document.getElementById('proyectos').offsetTop - 50 },
-      { id: 'habilidades', top: document.getElementById('habilidades').offsetTop - 50 },
-      { id: 'contacto', top: document.getElementById('contacto').offsetTop - 150 },
-    ];
-    
-    const scrollPosition = window.scrollY;
+  methods: {
+    changeLanguage(language) {
+      this.$i18n.locale = language;
+    },
+    handleScroll() {
+      const sections = [
+        { id: 'home', top: document.getElementById('home').offsetTop - 50 },
+        { id: 'conoceme', top: document.getElementById('conoceme').offsetTop - 50 },
+        { id: 'proyectos', top: document.getElementById('proyectos').offsetTop - 50 },
+        { id: 'habilidades', top: document.getElementById('habilidades').offsetTop - 50 },
+        { id: 'contacto', top: document.getElementById('contacto').offsetTop - 150 },
+      ];
+      
+      const scrollPosition = window.scrollY;
 
-    // Update navbar fixed state
-    this.isNavbarFixed = scrollPosition >= sections[1].top;
+      // Update navbar fixed state
+      this.isNavbarFixed = scrollPosition >= sections[1].top;
 
-    // Reset all links to inactive
-    const navLinks = document.querySelectorAll('.navigation a');
-    navLinks.forEach(link => link.classList.remove('active'));
+      // Reset all links to inactive
+      const navLinks = document.querySelectorAll('.navigation a');
+      navLinks.forEach(link => link.classList.remove('active'));
 
-    // Highlight the current section link
-    for (let i = sections.length - 1; i >= 0; i--) {
-      if (scrollPosition >= sections[i].top) {
-        document.querySelector(`a[href="#${sections[i].id}"]`).classList.add('active');
-        break;
+      // Highlight the current section link
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (scrollPosition >= sections[i].top) {
+          document.querySelector(`a[href="#${sections[i].id}"]`).classList.add('active');
+          break;
+        }
       }
-    }
+    },toggleAccessibilityMode() {
+    this.isAccessibilityMode = !this.isAccessibilityMode;
+    document.body.classList.toggle('accessibility-mode', this.isAccessibilityMode);
+
+  }
   },
-},
 };
 </script>
 
 <style>
+
+.accessibility-mode .navbarStyle,
+.accessibility-mode .text-white,
+body.accessibility-mode {
+  background-color: #002b36 !important;  /* Azul oscuro */
+  color: #fdf6e3 !important;  /* Beige */
+}
+
+.accessibility-mode .colorPrimary,
+body.accessibility-mode {
+  background-color: #002b36 !important;  /* Azul oscuro */
+}
+
+.accessibility-mode .colorSecond {
+  background-color: #268bd2 !important;  /* Azul brillante */
+  color: #fdf6e3 !important;  /* Beige */
+}
+
+.accessibility-mode .colorAccion {
+  background-color: #cb4b16 !important;  /* Naranja oscuro */
+  color: #fdf6e3 !important;  /* Beige */
+}
+
+.accessibility-mode .navigation a::after {
+  background-color: #268bd2 !important;  /* Azul brillante */
+}
+
+.accessibility-mode .skill-card {
+  background: #586e75 !important;  /* Gris oscuro */
+  color: #fdf6e3 !important;  /* Beige */
+}
+
+
+/* Botón de accesibilidad */
+.btn-accessibility {
+  position: fixed;
+  bottom: 20px; /* Ajuste para colocar el botón en la parte inferior */
+  right: 20px; /* Ajuste para colocar el botón a la derecha */
+  z-index: 1001;
+  background-color: #268bd2;  /* Azul brillante */
+  color: #002b36;  /* Azul oscuro */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 .fixed-navbar {
   position: fixed;

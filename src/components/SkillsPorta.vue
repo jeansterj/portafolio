@@ -187,4 +187,43 @@ export default {
   color: white;
   border-color: white;
 }
+
+/* Estilos para modo accesibilidad */
+.accessibility-mode .btn-outline:hover {
+  color: #002b36 !important; 
+  background-color: #fdf6e3 !important;  
+  border-color: #002b36 !important;  
+}
+.accessibility-mode .btn.text-white.colorPrimary{
+  background-color: #268bd2 !important;
+  color: #fdf6e3 !important;  
+  border-color: #fdf6e3 !important;  
+}
+
+.accessibility-mode .btn.text-white.colorPrimary:hover {
+  background-color: #268bd2 !important; 
+  color: #fdf6e3 !important;  
+  border-color: #fdf6e3 !important;  
+}
+
+.accessibility-mode .btn-check:checked + .btn,
+.accessibility-mode .btn.active,
+.accessibility-mode .btn.show,
+.accessibility-mode .btn:first-child:active,
+.accessibility-mode :not(.btn-check) + .btn:active {
+  background-color: #cb4b16 !important;  
+  border-color: #fdf6e3 !important;  
+}
+
+.accessibility-mode .skill-card {
+  background: #586e75 !important;  
+  color: #fdf6e3 !important;  
+  box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px !important;  
+}
+
+.accessibility-mode .tooltip {
+  background: #268bd2 !important;  
+  color: #002b36 !important;  
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1) !important;  
+}
 </style>

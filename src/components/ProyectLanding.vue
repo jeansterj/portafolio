@@ -41,12 +41,11 @@ export default {
     return {
       proyectos: [
         { id: 1, name: 'Pokemon' },
-        { id: 2, name: 'Coleccion' },
+        { id: 2, name: 'Colecciones' },
         { id: 3, name: 'LaiaGame' },
         { id: 4, name: 'Pomodoro' },
         { id: 5, name: 'ManualIdentidad' },
         { id: 6, name: 'JoInvito' },
-        { id: 7, name: 'JuegoRol' },
         { id: 8, name: 'Ahorcado' }
       ]
     };
